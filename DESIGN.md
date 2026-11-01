@@ -215,6 +215,10 @@ Match Paper, 18px radius, the one shadow. The question is Rubik, not a colored b
 
 The corner score is Karantina in lime, with נק׳ in Rubik beside it. When points land, the numeral steps up inside a clip. The clock is Karantina in Match Paper, and turns `#ffc7c2` at five seconds. The points toast is a small lime slab in Karantina, centered under the top bar, and clears after 1.1s.
 
+### Guess the player
+
+Career rounds do not use multiple choice. A paper field sits above the two actions. The player types freely, and a list opens upward from the field so the keyboard does not cover it. A guess counts only when a row is chosen. Each row shows the Hebrew name, with the English name under it in caption size. A miss is struck through in Wrong Red, the next club opens, and the points on offer fall along the same 100-to-20 curve. רמז נוסף opens a club without a name. ויתור, a timeout, or a miss after the last club reveals the answer for 0 points.
+
 ### Answers
 
 Unchosen answers are Match Paper slabs. After the pick, correct is Pitch Green, the miss is Wrong Red, and the rest dim to Pressed Paper. Correct and wrong each draw a 16px check or cross. Feedback is a separate slab in the same color and names the result.
