@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-01T12:15:00Z",
+  "title": "Design System: כדורגל טריוויה",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "neutral", "displayName": "Night Ink", "canonical": "#101114" },
+      "paper": { "role": "neutral", "displayName": "Match Paper", "canonical": "#f4f2ec" },
+      "paper-2": { "role": "neutral", "displayName": "Pressed Paper", "canonical": "#e6e1d4" },
+      "type": { "role": "neutral", "displayName": "Type", "canonical": "#14171c" },
+      "lime": { "role": "primary", "displayName": "Floodlight Lime", "canonical": "#d6f25c" },
+      "lime-2": { "role": "primary", "displayName": "Pressed Lime", "canonical": "#c6e24a" },
+      "good": { "role": "secondary", "displayName": "Pitch Green", "canonical": "#0c5a32" },
+      "bad": { "role": "tertiary", "displayName": "Wrong Red", "canonical": "#9e1e1e" },
+      "on-result": { "role": "neutral", "displayName": "Result Paper", "canonical": "#f4f2ec" },
+      "muted": { "role": "neutral", "displayName": "Standby", "canonical": "#c5cad3" },
+      "muted-ink": { "role": "neutral", "displayName": "Caption", "canonical": "#3c4553" },
+      "low": { "role": "tertiary", "displayName": "Low Clock", "canonical": "#ffc7c2" },
+      "disabled": { "role": "neutral", "displayName": "Disabled", "canonical": "#a8b0bc" },
+      "paper-3": { "role": "neutral", "displayName": "Hover Paper", "canonical": "#fffdf8" },
+      "locked": { "role": "neutral", "displayName": "Hidden Row", "canonical": "#6a6258" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home name in Karantina. The second line is Floodlight Lime." },
+      "result": { "displayName": "Result", "purpose": "Final score in Karantina, lime, tabular." },
+      "score": { "displayName": "Score", "purpose": "Corner score, clock, streak, and personal bests in Karantina." },
+      "title": { "displayName": "Title", "purpose": "The question, in Rubik, on the paper sheet." },
+      "body": { "displayName": "Body", "purpose": "Answers, buttons, and the home tagline." },
+      "label": { "displayName": "Label", "purpose": "League, era, and the point value." }
+    },
+    "shadows": [
+      { "name": "sheet", "value": "0 16px 36px -12px rgba(0, 0, 0, 0.55)", "purpose": "The only shadow. It lifts the question sheet off the night ground." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Sheet settle, score step, toast, and progress." },
+      { "name": "settle", "value": "translateY(12px) to none, 0.5s", "purpose": "The question sheet lands. It does not fade in from invisible." },
+      { "name": "bugstep", "value": "translateY(80%) to none, 0.42s", "purpose": "The corner score numeral steps when points land." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "390px" },
+      { "name": "phone-se", "value": "375px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Floodlight Lime slab. הבא and שחק שוב.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">הבא</button>",
+      "css": ".ds-btn-primary { background: #d6f25c; color: #101114; min-height: 54px; padding: 12px 14px; border: 0; border-radius: 14px; font-family: Rubik, Arial Hebrew, sans-serif; font-size: 1.05rem; font-weight: 700; } .ds-btn-primary:active { background: #c6e24a; }"
+    },
+    {
+      "name": "Question sheet",
+      "kind": "card",
+      "refersTo": "answer",
+      "description": "Match Paper sheet with one shadow. The question is Rubik, not a colored bar.",
+      "html": "<article class=\"ds-sheet\"><h2>מי השחקן?</h2></article>",
+      "css": ".ds-sheet { background: #f4f2ec; color: #14171c; border-radius: 18px; box-shadow: 0 16px 36px -12px rgba(0,0,0,.55); padding: 18px; font-family: Rubik, Arial Hebrew, sans-serif; } .ds-sheet h2 { margin: 0; font-size: 1.38rem; font-weight: 700; line-height: 1.32; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Floodlight",
+    "overview": "A match-night quiz on a phone. Night Ink is the room, Match Paper is the sheet, and Floodlight Lime is the one live color. Karantina sets the name and the figures. Rubik sets everything a person has to read.",
+    "keyCharacteristics": [
+      "Night Ink shell, Match Paper sheet, Floodlight Lime signal",
+      "Karantina for the name and the figures; Rubik for play",
+      "One soft shadow, on the question sheet only",
+      "Hebrew, RTL, one phone column"
+    ],
+    "rules": [
+      { "name": "The Lime Signal Rule", "body": "Lime marks what is live or what moves the round forward. It does not fill the question sheet, an unchosen answer, or a caption.", "section": "colors" },
+      { "name": "The Two Faces Rule", "body": "Karantina never sets a question or an answer. Rubik never sets the home name or the final score.", "section": "typography" },
+      { "name": "The One Shadow Rule", "body": "Only the question sheet casts a shadow, and that shadow has a downward offset.", "section": "elevation" }
+    ],
+    "dos": [
+      "Self-host Karantina and variable Rubik.",
+      "Resolve an answer with color and a drawn mark."
+    ],
+    "donts": [
+      "Don't render emoji.",
+      "Don't bring back the amber lower-third or a television frame."
+    ]
+  }
+}
