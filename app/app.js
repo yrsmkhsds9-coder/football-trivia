@@ -24,6 +24,7 @@
     document.querySelectorAll(".confetti").forEach(c => c.remove());
     document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === id));
     window.scrollTo(0, 0);
+    if (id !== "game") syncKeyboard(false);
   }
   function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 1100); }
   function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
@@ -80,7 +81,7 @@
     }
     hits.sort((a, b) => b.rank - a.rank || a.len - b.len || a.p.he.localeCompare(b.p.he, "he"));
     const missed = new Set((S && S.misses || []).map(m => m.he));
-    return hits.map(h => h.p).filter(p => !missed.has(p.he)).slice(0, 8);
+    return hits.map(h => h.p).filter(p => !missed.has(p.he)).slice(0, 4);
   }
   function isAnswerEntry(entry, player) {
     if (entry.id && entry.id === player.id) return true;
@@ -135,18 +136,35 @@
       return;
     }
     const c = it.player.career;
-    const rows = c.map((r, k) => k < S.revealed || S.locked
-      ? `<li class="club"><span class="n">${k + 1}</span><span class="who">${r[0]}${r[2] ? ' <span class="loan">(השאלה)</span>' : ""}</span><span class="yr">${r[1]}</span></li>`
-      : `<li class="club locked"><span class="n">${k + 1}</span><span class="who">???</span><span class="yr">????</span></li>`).join("");
+    const rows = c.map((r, k) => {
+      const open = k < S.revealed || S.locked;
+      const fresh = open && !S.locked && k === S.revealed - 1;
+      return open
+        ? `<li class="club${fresh ? " fresh" : ""}"><span class="n">${k + 1}</span><span class="who">${r[0]}${r[2] ? ' <span class="loan">(השאלה)</span>' : ""}</span><span class="yr">${r[1]}</span></li>`
+        : `<li class="club locked"><span class="n">${k + 1}</span><span class="who">???</span><span class="yr">????</span></li>`;
+    }).join("");
     const misses = (S.misses || []).map(m => `<li>${esc(m.he)}</li>`).join("");
     $("#card").innerHTML = `<div class="lower"><div class="lower-row"><h2 class="question">מי השחקן?</h2>${S.locked ? "" : `<p class="worth">שווה <b>${careerPoints()}</b> נק׳</p>`}</div></div>
       <div class="meta"><span>${it.player.group === "il" ? "ישראלי" : "אירופה"}</span></div><ul class="clubs ${c.length > 11 ? "compact xcompact" : c.length > 7 ? "compact" : ""}">${rows}</ul>${misses ? `<ul class="misses">${misses}</ul>` : ""}`;
+    scrollClubs();
+  }
+
+  function scrollClubs() {
+    const last = document.querySelector(".club.fresh") || [...document.querySelectorAll(".club:not(.locked)")].pop();
+    if (!last) return;
+    const clubs = last.closest(".clubs");
+    const scroller = clubs && clubs.scrollHeight > clubs.clientHeight + 2 ? clubs : document.querySelector(".play-scroll");
+    if (!scroller) return;
+    const s = scroller.getBoundingClientRect();
+    const r = last.getBoundingClientRect();
+    if (r.bottom > s.bottom - 2) scroller.scrollTop += r.bottom - s.bottom + 6;
+    else if (r.top < s.top + 2) scroller.scrollTop -= s.top - r.top + 6;
   }
 
   function renderGuess() {
     const box = $("#answers");
     box.classList.add("guess-mode");
-    box.innerHTML = `<div class="guess"><p class="guess-worth">שווה <b>${careerPoints()}</b> נק׳</p><div class="guess-box"><ul class="guess-menu" id="guessMenu" role="listbox" hidden></ul><input id="guessInput" class="guess-input" type="text" enterkeyhint="go" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="הקלידו שם, ובחרו מהרשימה" aria-label="שם השחקן" aria-autocomplete="list" aria-controls="guessMenu" aria-expanded="false"></div></div>`;
+    box.innerHTML = `<div class="guess"><ul class="guess-menu" id="guessMenu" role="listbox" hidden></ul><input id="guessInput" class="guess-input" type="text" enterkeyhint="go" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="הקלידו שם, ובחרו מהרשימה" aria-label="שם השחקן" aria-autocomplete="list" aria-controls="guessMenu" aria-expanded="false"></div>`;
     const input = $("#guessInput");
     const menu = $("#guessMenu");
     const paint = () => {
@@ -172,26 +190,72 @@
       else if (e.key === "Escape") { menu.hidden = true; input.setAttribute("aria-expanded", "false"); }
     });
     bindKeyboard(input);
-    input.focus();
+    syncKeyboard(true);
+    input.focus({ preventScroll: true });
   }
 
   let kbBound = false;
   function bindKeyboard(input) {
+    const onFocus = () => syncKeyboard(true);
+    const onBlur = () => setTimeout(() => {
+      if (document.activeElement && document.activeElement.id === "guessInput") return;
+      syncKeyboard(false);
+    }, 140);
+    input.addEventListener("focus", onFocus);
+    input.addEventListener("blur", onBlur);
+    if (kbBound) return;
+    kbBound = true;
     const vv = window.visualViewport;
-    if (!vv) return;
-    const app = document.getElementById("app");
-    const sync = () => {
-      app.style.height = Math.round(vv.height) + "px";
-      app.style.transform = vv.offsetTop ? `translateY(${Math.round(vv.offsetTop)}px)` : "";
-    };
-    const reset = () => { app.style.height = ""; app.style.transform = ""; };
-    if (!kbBound) {
-      vv.addEventListener("resize", sync);
-      vv.addEventListener("scroll", sync);
-      kbBound = true;
+    if (vv) {
+      const onVv = () => syncKeyboard(document.activeElement && document.activeElement.id === "guessInput");
+      vv.addEventListener("resize", onVv);
+      vv.addEventListener("scroll", onVv);
     }
-    input.addEventListener("focus", sync);
-    input.addEventListener("blur", () => setTimeout(reset, 120));
+    window.addEventListener("scroll", () => {
+      if (document.documentElement.classList.contains("kb") && (window.scrollX || window.scrollY)) window.scrollTo(0, 0);
+    }, { passive: true });
+    document.addEventListener("touchmove", e => {
+      if (!document.documentElement.classList.contains("kb")) return;
+      const scroller = e.target.closest && e.target.closest(".clubs, .guess-menu");
+      if (scroller && scroller.scrollHeight > scroller.clientHeight + 1) return;
+      e.preventDefault();
+    }, { passive: false });
+  }
+
+  function syncKeyboard(typing) {
+    const app = document.getElementById("app");
+    const game = document.getElementById("game");
+    const vv = window.visualViewport;
+    const narrow = window.innerWidth <= 540;
+    const shrunk = !!(vv && (window.innerHeight - vv.height > 80 || vv.offsetTop > 40));
+    const active = !!(typing && game && game.classList.contains("active") && !S?.locked && (narrow || shrunk));
+    document.documentElement.classList.toggle("kb", active);
+    document.documentElement.classList.toggle("kb-short", active && shrunk);
+    if (game) {
+      game.classList.toggle("kb", active);
+      game.classList.toggle("kb-short", active && shrunk);
+    }
+    if (!active || !vv) {
+      app.style.position = "";
+      app.style.top = "";
+      app.style.left = "";
+      app.style.right = "";
+      app.style.width = "";
+      app.style.height = "";
+      app.style.maxHeight = "";
+      return;
+    }
+    const h = Math.max(280, Math.round(vv.height));
+    const top = Math.max(0, Math.round(vv.offsetTop));
+    app.style.position = "fixed";
+    app.style.top = top + "px";
+    app.style.left = "0";
+    app.style.right = "0";
+    app.style.width = "100%";
+    app.style.height = h + "px";
+    app.style.maxHeight = h + "px";
+    if (window.scrollX || window.scrollY) window.scrollTo(0, 0);
+    requestAnimationFrame(scrollClubs);
   }
 
   function chooseGuess(entry) {
@@ -226,6 +290,7 @@
       };
       $("#giveBtn").onclick = () => scoreCareer(false, "ויתור. ");
     } else $("#actions").innerHTML = "";
+    requestAnimationFrame(scrollClubs);
   }
 
   function award(base) {
@@ -245,6 +310,7 @@
     const it = S.items[S.i];
     const base = ok ? careerPoints() : 0;
     S.locked = true; S.revealed = it.player.career.length; stopTimer();
+    syncKeyboard(false);
     $("#answers").classList.remove("guess-mode");
     $("#answers").innerHTML = "";
     if (ok) award(base); else { S.streak = 0; vibrate([60, 40, 60]); }
@@ -327,5 +393,5 @@
 
   renderHome();
   // expose for testing
-  window.__ft = { start, answer, choose: chooseGuess, search: searchPool, get state() { return S; } };
+  window.__ft = { start, answer, next, choose: chooseGuess, search: searchPool, get state() { return S; } };
 })();
