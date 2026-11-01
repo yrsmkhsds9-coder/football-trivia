@@ -14,7 +14,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="fonts/karantina-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <div id="app">
@@ -32,17 +32,15 @@
   </section>
 
   <section id="game" class="screen">
-    <header class="topbar">
+    <header class="chrome">
       <button id="quit" class="icon-btn" type="button" aria-label="יציאה">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
+      <span class="qgroup"><span id="qnum">1/10</span><span id="streak" class="streak hidden">רצף <b>0</b></span></span>
       <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" aria-label="התקדמות בסבב"><div id="progressFill"></div></div>
+      <span id="timer" class="timer">15</span>
       <div class="score-pill"><span class="bug"><span id="score">0</span></span><span class="unit">נק׳</span></div>
     </header>
-    <div class="status-row">
-      <span class="qgroup"><span id="qnum">1/10</span><span id="streak" class="streak hidden">רצף <b>0</b></span></span>
-      <span id="timer" class="timer">15</span>
-    </div>
     <div class="play-scroll">
       <div id="card" class="card"></div>
     </div>
@@ -66,8 +64,8 @@
   </section>
 </div>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="data.js"></script>
-<script src="players-pool.js"></script>
-<script src="app.js"></script>
+<script src="data.js?v=5"></script>
+<script src="players-pool.js?v=5"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
