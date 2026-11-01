@@ -17,7 +17,7 @@
   function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 1100); }
   function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
   function confetti() {
-    const colors = ["#f5c518", "#f4f0e6", "#0c5c34", "#d5dce8"];
+    const colors = ["#d6f25c", "#f4f2ec", "#0c5a32", "#c5cad3"];
     for (let i = 0; i < 22; i++) {
       const c = document.createElement("div"); c.className = "confetti";
       c.style.left = Math.random() * 100 + "vw"; c.style.background = colors[i % colors.length];

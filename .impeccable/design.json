@@ -1,278 +1,44 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T11:44:38Z",
+  "generatedAt": "2026-11-01T12:15:00Z",
   "title": "Design System: כדורגל טריוויה",
   "extensions": {
     "colorMeta": {
-      "navy": {
-        "role": "neutral",
-        "displayName": "Night Navy",
-        "canonical": "#071428",
-        "tonalRamp": [
-          "oklch(15% 0.018 258)",
-          "oklch(27% 0.031 258)",
-          "oklch(40% 0.040 258)",
-          "oklch(52% 0.045 258)",
-          "oklch(64% 0.041 258)",
-          "oklch(76% 0.031 258)",
-          "oklch(86% 0.019 258)",
-          "oklch(95% 0.008 258)"
-        ]
-      },
-      "cream": {
-        "role": "neutral",
-        "displayName": "Programme Cream",
-        "canonical": "#f4f0e6",
-        "tonalRamp": [
-          "oklch(15% 0.006 89)",
-          "oklch(27% 0.010 89)",
-          "oklch(40% 0.013 89)",
-          "oklch(52% 0.014 89)",
-          "oklch(64% 0.013 89)",
-          "oklch(76% 0.010 89)",
-          "oklch(86% 0.006 89)",
-          "oklch(95% 0.003 89)"
-        ]
-      },
-      "cream-2": {
-        "role": "neutral",
-        "displayName": "Pressed Cream",
-        "canonical": "#e7e0d2",
-        "tonalRamp": [
-          "oklch(15% 0.008 85)",
-          "oklch(27% 0.014 85)",
-          "oklch(40% 0.018 85)",
-          "oklch(52% 0.020 85)",
-          "oklch(64% 0.019 85)",
-          "oklch(76% 0.014 85)",
-          "oklch(86% 0.009 85)",
-          "oklch(95% 0.004 85)"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Scoreboard Ink",
-        "canonical": "#102033",
-        "tonalRamp": [
-          "oklch(15% 0.017 254)",
-          "oklch(27% 0.030 254)",
-          "oklch(40% 0.038 254)",
-          "oklch(52% 0.043 254)",
-          "oklch(64% 0.039 254)",
-          "oklch(76% 0.030 254)",
-          "oklch(86% 0.018 254)",
-          "oklch(95% 0.008 254)"
-        ]
-      },
-      "amber": {
-        "role": "primary",
-        "displayName": "Broadcast Amber",
-        "canonical": "#f5c518",
-        "tonalRamp": [
-          "oklch(15% 0.067 90)",
-          "oklch(27% 0.118 90)",
-          "oklch(40% 0.152 90)",
-          "oklch(52% 0.168 90)",
-          "oklch(64% 0.155 90)",
-          "oklch(76% 0.118 90)",
-          "oklch(86% 0.071 90)",
-          "oklch(95% 0.030 90)"
-        ]
-      },
-      "good": {
-        "role": "secondary",
-        "displayName": "Pitch Green",
-        "canonical": "#0c5c34",
-        "tonalRamp": [
-          "oklch(15% 0.039 155)",
-          "oklch(27% 0.069 155)",
-          "oklch(40% 0.088 155)",
-          "oklch(52% 0.098 155)",
-          "oklch(64% 0.090 155)",
-          "oklch(76% 0.069 155)",
-          "oklch(86% 0.041 155)",
-          "oklch(95% 0.018 155)"
-        ]
-      },
-      "bad": {
-        "role": "tertiary",
-        "displayName": "Wrong Red",
-        "canonical": "#8e1e1a",
-        "tonalRamp": [
-          "oklch(15% 0.059 28)",
-          "oklch(27% 0.104 28)",
-          "oklch(40% 0.133 28)",
-          "oklch(52% 0.148 28)",
-          "oklch(64% 0.136 28)",
-          "oklch(76% 0.104 28)",
-          "oklch(86% 0.062 28)",
-          "oklch(95% 0.027 28)"
-        ]
-      },
-      "on-good": {
-        "role": "neutral",
-        "displayName": "Result Cream",
-        "canonical": "#f4f0e6",
-        "tonalRamp": [
-          "oklch(15% 0.006 89)",
-          "oklch(27% 0.010 89)",
-          "oklch(40% 0.013 89)",
-          "oklch(52% 0.014 89)",
-          "oklch(64% 0.013 89)",
-          "oklch(76% 0.010 89)",
-          "oklch(86% 0.006 89)",
-          "oklch(95% 0.003 89)"
-        ]
-      },
-      "on-bad": {
-        "role": "neutral",
-        "displayName": "Result Cream",
-        "canonical": "#f4f0e6",
-        "tonalRamp": [
-          "oklch(15% 0.006 89)",
-          "oklch(27% 0.010 89)",
-          "oklch(40% 0.013 89)",
-          "oklch(52% 0.014 89)",
-          "oklch(64% 0.013 89)",
-          "oklch(76% 0.010 89)",
-          "oklch(86% 0.006 89)",
-          "oklch(95% 0.003 89)"
-        ]
-      },
-      "muted": {
-        "role": "neutral",
-        "displayName": "Standby Gray",
-        "canonical": "#d5dce8",
-        "tonalRamp": [
-          "oklch(15% 0.007 261)",
-          "oklch(27% 0.013 261)",
-          "oklch(40% 0.016 261)",
-          "oklch(52% 0.018 261)",
-          "oklch(64% 0.017 261)",
-          "oklch(76% 0.013 261)",
-          "oklch(86% 0.008 261)",
-          "oklch(95% 0.003 261)"
-        ]
-      },
-      "muted-ink": {
-        "role": "neutral",
-        "displayName": "Caption Ink",
-        "canonical": "#3e4c5e",
-        "tonalRamp": [
-          "oklch(15% 0.014 255)",
-          "oklch(27% 0.025 255)",
-          "oklch(40% 0.032 255)",
-          "oklch(52% 0.035 255)",
-          "oklch(64% 0.032 255)",
-          "oklch(76% 0.025 255)",
-          "oklch(86% 0.015 255)",
-          "oklch(95% 0.006 255)"
-        ]
-      },
-      "line": {
-        "role": "neutral",
-        "displayName": "Shell Seam",
-        "canonical": "rgba(244, 240, 230, 0.22)",
-        "tonalRamp": [
-          "oklch(15% 0.006 89)",
-          "oklch(27% 0.010 89)",
-          "oklch(40% 0.013 89)",
-          "oklch(52% 0.014 89)",
-          "oklch(64% 0.013 89)",
-          "oklch(76% 0.010 89)",
-          "oklch(86% 0.006 89)",
-          "oklch(95% 0.003 89)"
-        ]
-      },
-      "line-ink": {
-        "role": "neutral",
-        "displayName": "Card Seam",
-        "canonical": "rgba(16, 32, 51, 0.14)",
-        "tonalRamp": [
-          "oklch(15% 0.017 254)",
-          "oklch(27% 0.030 254)",
-          "oklch(40% 0.038 254)",
-          "oklch(52% 0.043 254)",
-          "oklch(64% 0.039 254)",
-          "oklch(76% 0.030 254)",
-          "oklch(86% 0.018 254)",
-          "oklch(95% 0.008 254)"
-        ]
-      }
+      "ink": { "role": "neutral", "displayName": "Night Ink", "canonical": "#101114" },
+      "paper": { "role": "neutral", "displayName": "Match Paper", "canonical": "#f4f2ec" },
+      "paper-2": { "role": "neutral", "displayName": "Pressed Paper", "canonical": "#e6e1d4" },
+      "type": { "role": "neutral", "displayName": "Type", "canonical": "#14171c" },
+      "lime": { "role": "primary", "displayName": "Floodlight Lime", "canonical": "#d6f25c" },
+      "lime-2": { "role": "primary", "displayName": "Pressed Lime", "canonical": "#c6e24a" },
+      "good": { "role": "secondary", "displayName": "Pitch Green", "canonical": "#0c5a32" },
+      "bad": { "role": "tertiary", "displayName": "Wrong Red", "canonical": "#9e1e1e" },
+      "on-result": { "role": "neutral", "displayName": "Result Paper", "canonical": "#f4f2ec" },
+      "muted": { "role": "neutral", "displayName": "Standby", "canonical": "#c5cad3" },
+      "muted-ink": { "role": "neutral", "displayName": "Caption", "canonical": "#3c4553" },
+      "low": { "role": "tertiary", "displayName": "Low Clock", "canonical": "#ffc7c2" },
+      "disabled": { "role": "neutral", "displayName": "Disabled", "canonical": "#a8b0bc" },
+      "paper-3": { "role": "neutral", "displayName": "Hover Paper", "canonical": "#fffdf8" },
+      "locked": { "role": "neutral", "displayName": "Hidden Row", "canonical": "#6a6258" }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "The name on the home mast."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "The end-of-round title."
-      },
-      "result": {
-        "displayName": "Result",
-        "purpose": "The final score inside the amber band."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "The question inside the amber lower-third."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "The inherited UI voice."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "The caption under a figure."
-      }
+      "display": { "displayName": "Display", "purpose": "Home name in Karantina. The second line is Floodlight Lime." },
+      "result": { "displayName": "Result", "purpose": "Final score in Karantina, lime, tabular." },
+      "score": { "displayName": "Score", "purpose": "Corner score, clock, streak, and personal bests in Karantina." },
+      "title": { "displayName": "Title", "purpose": "The question, in Rubik, on the paper sheet." },
+      "body": { "displayName": "Body", "purpose": "Answers, buttons, and the home tagline." },
+      "label": { "displayName": "Label", "purpose": "League, era, and the point value." }
     },
-    "shadows": [],
+    "shadows": [
+      { "name": "sheet", "value": "0 16px 36px -12px rgba(0, 0, 0, 0.55)", "purpose": "The only shadow. It lifts the question sheet off the night ground." }
+    ],
     "motion": [
-      {
-        "name": "ease-broadcast",
-        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Lower-third wipe, score step, progress width, and toast travel."
-      },
-      {
-        "name": "wipe",
-        "value": "clip-path inset(0 0 0 100%) to inset(0 0 0 0), 0.42s",
-        "purpose": "A new question's lower-third uncovers from the left edge toward the right."
-      },
-      {
-        "name": "bugstep",
-        "value": "translateY(70%) to none, 0.38s",
-        "purpose": "The corner score numeral steps up when points land, clipped by the bug."
-      },
-      {
-        "name": "progress",
-        "value": "width 0.35s",
-        "purpose": "The cream progress fill advances on the broadcast curve."
-      },
-      {
-        "name": "toast",
-        "value": "opacity 0.2s linear, transform 0.28s",
-        "purpose": "The points toast fades and travels 6px, then clears after 1.1s."
-      },
-      {
-        "name": "confetti",
-        "value": "translateY(105vh) rotate(180deg), linear",
-        "purpose": "22 rectangles, 8×12, in amber, cream, green, and standby gray, on streak 3, streak 5, and a new record."
-      },
-      {
-        "name": "reduced-motion",
-        "value": "prefers-reduced-motion: reduce",
-        "purpose": "Drops the wipe, the score step, confetti, the toast travel, and the progress transition."
-      }
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Sheet settle, score step, toast, and progress." },
+      { "name": "settle", "value": "translateY(12px) to none, 0.5s", "purpose": "The question sheet lands. It does not fade in from invisible." },
+      { "name": "bugstep", "value": "translateY(80%) to none, 0.42s", "purpose": "The corner score numeral steps when points land." }
     ],
     "breakpoints": [
-      {
-        "name": "column",
-        "value": "480px"
-      },
-      {
-        "name": "narrow",
-        "value": "359px"
-      }
+      { "name": "phone", "value": "390px" },
+      { "name": "phone-se", "value": "375px" }
     ]
   },
   "components": [
@@ -280,153 +46,40 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Amber continue slab. Held state is #e0ad08. No hover fill.",
-      "html": "<button class=\"ds-btn-primary\" type=\"button\">שחק שוב</button>",
-      "css": ".ds-btn-primary {\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  padding: 12px 14px;\n  min-height: 52px;\n  border: 0;\n  border-radius: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  line-height: 1.25;\n  direction: rtl;\n}\n.ds-btn-primary:active { background: var(--cream-2, #e7e0d2); }\n.ds-btn-primary:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
+      "description": "Floodlight Lime slab. הבא and שחק שוב.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">הבא</button>",
+      "css": ".ds-btn-primary { background: #d6f25c; color: #101114; min-height: 54px; padding: 12px 14px; border: 0; border-radius: 14px; font-family: Rubik, Arial Hebrew, sans-serif; font-size: 1.05rem; font-weight: 700; } .ds-btn-primary:active { background: #c6e24a; }"
     },
     {
-      "name": "Secondary Button",
-      "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Hairline slab for the in-round pair. The inset seam outranks the focus halo; the cream outline remains.",
-      "html": "<div class=\"ds-btn-row\"><button class=\"ds-btn-secondary\" type=\"button\">עוד קבוצה</button><button class=\"ds-btn-secondary\" type=\"button\" disabled>הצג הכל</button></div>",
-      "css": ".ds-btn-row { display: flex; gap: 8px; direction: rtl; }\n.ds-btn-secondary {\n  flex: 1;\n  background: transparent;\n  color: var(--cream, #f4f0e6);\n  padding: 12px 14px;\n  min-height: 52px;\n  border: 0;\n  border-radius: 0;\n  box-shadow: inset 0 0 0 1px var(--line, rgba(244, 240, 230, 0.22));\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  direction: rtl;\n}\n.ds-btn-secondary:active:not(:disabled) { background: rgba(244, 240, 230, 0.08); }\n.ds-btn-secondary:disabled {\n  color: #b7c2d1;\n  box-shadow: inset 0 0 0 1px rgba(244, 240, 230, 0.18);\n}\n.ds-btn-secondary:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n}"
-    },
-    {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "The same hairline as secondary, full width, for the way back to the home screen.",
-      "html": "<button class=\"ds-btn-ghost\" type=\"button\">למסך הראשי</button>",
-      "css": ".ds-btn-ghost {\n  display: block;\n  width: 100%;\n  background: transparent;\n  color: var(--cream, #f4f0e6);\n  padding: 12px 14px;\n  min-height: 52px;\n  border: 0;\n  border-radius: 0;\n  box-shadow: inset 0 0 0 1px var(--line, rgba(244, 240, 230, 0.22));\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  direction: rtl;\n}\n.ds-btn-ghost:active { background: rgba(244, 240, 230, 0.08); }\n.ds-btn-ghost:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n}"
-    },
-    {
-      "name": "Era Chip",
-      "kind": "chip",
-      "refersTo": "chip-active",
-      "description": "Two square halves. The selected era is the amber slab.",
-      "html": "<div class=\"ds-era\" role=\"group\"><button class=\"ds-chip ds-chip-on\" type=\"button\" aria-pressed=\"true\">כל התקופות</button><button class=\"ds-chip\" type=\"button\" aria-pressed=\"false\">ניינטיז ו־2000</button></div>",
-      "css": ".ds-era {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 4px;\n  padding: 4px;\n  border: 1px solid var(--line, rgba(244, 240, 230, 0.22));\n  border-radius: 0;\n  direction: rtl;\n}\n.ds-chip {\n  min-height: 48px;\n  padding: 10px 8px;\n  border: 0;\n  border-radius: 0;\n  background: transparent;\n  color: var(--cream, #f4f0e6);\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 0.98rem;\n  font-weight: 700;\n}\n.ds-chip-on { background: var(--amber, #f5c518); color: var(--navy, #071428); }\n.ds-chip:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
-    },
-    {
-      "name": "Mode Row",
-      "kind": "nav",
-      "refersTo": "mode-row",
-      "description": "Home navigation row. Title leads, personal best is a tabular Secular One numeral, caption under it.",
-      "html": "<button class=\"ds-mode\" type=\"button\"><span class=\"ds-mode-icon\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\"><path d=\"M4 17.5V8.2\"/><path d=\"M4 17.5h16\"/><path d=\"M4 8.2c2.4 2.2 3.6 3 5.4 3 2.5 0 3.1-2.7 5.4-2.7 1.7 0 2.9.7 5.2 2.2\"/><circle cx=\"4\" cy=\"8.2\" r=\"1.25\"/><circle cx=\"9.4\" cy=\"11.2\" r=\"1.25\"/><circle cx=\"14.8\" cy=\"8.5\" r=\"1.25\"/><circle cx=\"20\" cy=\"10.7\" r=\"1.25\"/></svg></span><span class=\"ds-mode-copy\"><span class=\"ds-mode-title\">נחש את השחקן</span><span class=\"ds-mode-sub\">לפי מסלול הקריירה</span></span><span class=\"ds-mode-best\"><b>840</b>שיא</span></button>",
-      "css": ".ds-mode {\n  display: grid;\n  grid-template-columns: 28px 1fr auto;\n  gap: 12px;\n  align-items: center;\n  width: 100%;\n  min-height: 76px;\n  padding: 14px 2px;\n  border: 0;\n  border-radius: 0;\n  border-top: 1px solid var(--line, rgba(244, 240, 230, 0.22));\n  border-bottom: 1px solid var(--line, rgba(244, 240, 230, 0.22));\n  background: transparent;\n  color: var(--cream, #f4f0e6);\n  text-align: right;\n  direction: rtl;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n}\n.ds-mode-icon svg {\n  width: 22px;\n  height: 22px;\n  display: block;\n  fill: none;\n  stroke: currentColor;\n  stroke-width: 1.75;\n  stroke-linecap: round;\n  stroke-linejoin: round;\n}\n.ds-mode-icon svg circle { fill: currentColor; stroke: none; }\n.ds-mode-copy { display: flex; flex-direction: column; gap: 2px; }\n.ds-mode-title { font-size: 1.2rem; font-weight: 800; line-height: 1.2; }\n.ds-mode-sub { font-size: 0.92rem; font-weight: 500; color: var(--muted, #d5dce8); }\n.ds-mode-best {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  min-width: 3.2rem;\n  color: var(--muted, #d5dce8);\n  font-size: 0.75rem;\n  font-weight: 700;\n}\n.ds-mode-best b {\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: 1.45rem;\n  line-height: 1;\n  color: var(--cream, #f4f0e6);\n  font-variant-numeric: tabular-nums;\n}\n@media (hover: hover) {\n  .ds-mode:hover { background: rgba(244, 240, 230, 0.06); }\n}\n.ds-mode:active { background: rgba(244, 240, 230, 0.08); }\n.ds-mode:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
-    },
-    {
-      "name": "Answer Slab",
-      "kind": "button",
+      "name": "Question sheet",
+      "kind": "card",
       "refersTo": "answer",
-      "description": "Cream choice slab. Correct and wrong carry a drawn mark as well as the result color. Dim is the unchosen rest.",
-      "html": "<div class=\"ds-answers\"><button class=\"ds-ans\" type=\"button\">תשובה</button><button class=\"ds-ans ds-ans-correct\" type=\"button\">נכון</button><button class=\"ds-ans ds-ans-wrong\" type=\"button\">לא נכון</button><button class=\"ds-ans ds-ans-dim\" type=\"button\" disabled>אחרת</button></div>",
-      "css": ".ds-answers { display: grid; grid-template-columns: 1fr; gap: 8px; direction: rtl; }\n.ds-ans {\n  min-height: 52px;\n  padding: 10px 14px;\n  border: 0;\n  border-radius: 0;\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  line-height: 1.25;\n  text-align: center;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n}\n@media (hover: hover) {\n  .ds-ans:hover:not(:disabled) { background: #fffdf8; }\n}\n.ds-ans:active:not(:disabled) { background: var(--cream-2, #e7e0d2); }\n.ds-ans-correct { background: var(--good, #0c5c34); color: var(--on-good, #f4f0e6); }\n.ds-ans-wrong { background: var(--bad, #8e1e1a); color: var(--on-bad, #f4f0e6); }\n.ds-ans-dim { background: #e4dccb; color: var(--muted-ink, #3e4c5e); }\n.ds-ans-correct::after,\n.ds-ans-wrong::after {\n  content: \"\";\n  width: 16px;\n  height: 16px;\n  flex: none;\n  background: currentColor;\n  -webkit-mask: var(--ds-mark) center / contain no-repeat;\n  mask: var(--ds-mark) center / contain no-repeat;\n}\n.ds-ans-correct { --ds-mark: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><path d='M5 12.5 10 17.5 19 7'/></svg>\"); }\n.ds-ans-wrong { --ds-mark: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.6' stroke-linecap='round'><path d='M7 7l10 10M17 7 7 17'/></svg>\"); }\n.ds-ans:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
-    },
-    {
-      "name": "Score Bug",
-      "kind": "custom",
-      "refersTo": "score-bug",
-      "description": "Corner score slab. The numeral is Secular One, tabular, and steps up when points land.",
-      "html": "<div class=\"ds-score\"><span class=\"ds-score-clip\"><span class=\"ds-score-num\">120</span></span><span class=\"ds-score-unit\">נק׳</span></div>",
-      "css": ".ds-score {\n  display: flex;\n  align-items: baseline;\n  justify-content: center;\n  gap: 4px;\n  min-width: 76px;\n  min-height: 44px;\n  padding: 6px 10px;\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  border-radius: 0;\n  direction: rtl;\n}\n.ds-score-clip { overflow: hidden; height: 1.35rem; display: grid; align-items: center; }\n.ds-score-num {\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: 1.35rem;\n  line-height: 1;\n  font-variant-numeric: tabular-nums;\n  display: block;\n  animation: ds-bugstep 0.38s cubic-bezier(0.16, 1, 0.3, 1);\n}\n.ds-score-unit {\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 0.78rem;\n  font-weight: 800;\n}\n@keyframes ds-bugstep {\n  from { transform: translateY(70%); }\n  to { transform: none; }\n}"
-    },
-    {
-      "name": "Lower Third",
-      "kind": "custom",
-      "refersTo": "lower-third",
-      "description": "The question plate: one amber bar on one cream field. The bar uncovers from the right edge toward the left.",
-      "html": "<div class=\"ds-plate\"><div class=\"ds-lower\"><div class=\"ds-lower-row\"><h2 class=\"ds-question\">מי השחקן?</h2><p class=\"ds-worth\">שווה <b>100</b> נק׳</p></div></div><div class=\"ds-meta\"><span>ישראלי</span><span>ניינטיז/2000</span></div><ul class=\"ds-clubs\"><li class=\"ds-club\"><span class=\"ds-n\">1</span><span>קבוצה</span><span class=\"ds-yr\">1998–2003</span></li><li class=\"ds-club ds-club-locked\"><span class=\"ds-n\">2</span><span>???</span><span class=\"ds-yr\">????</span></li></ul></div>",
-      "css": ".ds-plate {\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  border-radius: 0;\n  direction: rtl;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n}\n.ds-lower {\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  padding: 14px 16px 13px;\n  animation: ds-wipe 0.42s cubic-bezier(0.16, 1, 0.3, 1);\n}\n@keyframes ds-wipe {\n  from { clip-path: inset(0 0 0 100%); }\n  to { clip-path: inset(0 0 0 0); }\n}\n.ds-lower-row {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  gap: 12px;\n}\n.ds-question {\n  margin: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.28rem;\n  font-weight: 800;\n  line-height: 1.35;\n}\n.ds-worth { margin: 0; font-size: 0.92rem; font-weight: 700; white-space: nowrap; }\n.ds-worth b { font-variant-numeric: tabular-nums; }\n.ds-meta {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 14px;\n  padding: 10px 16px 0;\n  color: var(--muted-ink, #3e4c5e);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n.ds-clubs {\n  list-style: none;\n  margin: 0;\n  padding: 4px 16px 8px;\n}\n.ds-club {\n  display: grid;\n  grid-template-columns: 1.5rem minmax(0, 1fr) auto;\n  gap: 10px;\n  align-items: baseline;\n  padding: 8px 0;\n  border-bottom: 1px solid var(--line-ink, rgba(16, 32, 51, 0.14));\n  font-size: 1.02rem;\n  font-weight: 700;\n}\n.ds-club:last-child { border-bottom: 0; }\n.ds-n { font-variant-numeric: tabular-nums; font-weight: 800; }\n.ds-yr {\n  font-variant-numeric: tabular-nums;\n  font-weight: 600;\n  font-size: 0.86rem;\n  color: var(--muted-ink, #3e4c5e);\n  direction: ltr;\n  unicode-bidi: isolate;\n}\n.ds-club-locked span:nth-child(2),\n.ds-club-locked .ds-yr { color: #4a433c; }"
-    },
-    {
-      "name": "Feedback",
-      "kind": "custom",
-      "refersTo": "feedback-good",
-      "description": "Full-width result bar under the answers. Green for a hit, red for a miss or a timeout.",
-      "html": "<div class=\"ds-feedback-stack\"><div class=\"ds-feedback ds-feedback-good\">נכון!</div><div class=\"ds-feedback ds-feedback-bad\">לא נכון. התשובה: שם</div></div>",
-      "css": ".ds-feedback-stack { display: flex; flex-direction: column; gap: 8px; direction: rtl; }\n.ds-feedback {\n  padding: 12px 14px;\n  border-radius: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-weight: 700;\n  font-size: 1rem;\n  line-height: 1.35;\n}\n.ds-feedback-good { background: var(--good, #0c5c34); color: var(--on-good, #f4f0e6); }\n.ds-feedback-bad { background: var(--bad, #8e1e1a); color: var(--on-bad, #f4f0e6); }"
-    },
-    {
-      "name": "Result Band",
-      "kind": "custom",
-      "refersTo": "result-band",
-      "description": "End-of-round score. The amber band bleeds to the column edges. A new record is Secular One in cream under the stats.",
-      "html": "<div class=\"ds-end\"><div class=\"ds-result\"><span>840</span><small>נקודות</small></div><div class=\"ds-record\">שיא חדש</div></div>",
-      "css": ".ds-end { direction: rtl; text-align: center; }\n.ds-result {\n  margin: 0 -18px;\n  padding: 16px 18px 14px;\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  border-radius: 0;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: clamp(4.6rem, 24vw, 6rem);\n  line-height: 0.9;\n  font-variant-numeric: tabular-nums;\n}\n.ds-result small {\n  display: block;\n  margin-top: 6px;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 0.95rem;\n  font-weight: 800;\n  line-height: 1.2;\n}\n.ds-record {\n  margin-top: 8px;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: 1.85rem;\n  color: var(--cream, #f4f0e6);\n}"
+      "description": "Match Paper sheet with one shadow. The question is Rubik, not a colored bar.",
+      "html": "<article class=\"ds-sheet\"><h2>מי השחקן?</h2></article>",
+      "css": ".ds-sheet { background: #f4f2ec; color: #14171c; border-radius: 18px; box-shadow: 0 16px 36px -12px rgba(0,0,0,.55); padding: 18px; font-family: Rubik, Arial Hebrew, sans-serif; } .ds-sheet h2 { margin: 0; font-size: 1.38rem; font-weight: 700; line-height: 1.32; }"
     }
   ],
   "narrative": {
-    "northStar": "The Sunday Broadcast",
-    "overview": "כדורגל טריוויה is a ten-question Hebrew football quiz drawn as a 1990s Israeli sports broadcast on a single phone. Night Navy is the studio shell. Programme Cream is the card and the primary continue button. Broadcast Amber is the live signal: the selected era, the question lower-third, the corner score, the final score band, the points toast, and text selection.\n\nThe column is square, dense, and flat. Secular One carries the name and the scoreboard figures. Heebo carries every question, choice, and caption. Regions meet at a 1px seam. A resolved answer is a Pitch Green or Wrong Red slab with a drawn mark. The question plate has one job, and a long career scrolls inside it. Quit is an unmarked icon button, held apart from the amber score.\n\nThe world keeps the broadcast and drops the costume. There is no emoji, no television bezel, no sticker-album chrome, and no toto-coupon grid. Depth comes from the three stacked fields, not from shadows.",
+    "northStar": "Floodlight",
+    "overview": "A match-night quiz on a phone. Night Ink is the room, Match Paper is the sheet, and Floodlight Lime is the one live color. Karantina sets the name and the figures. Rubik sets everything a person has to read.",
     "keyCharacteristics": [
-      "Night Navy shell, Programme Cream field, Broadcast Amber signal",
-      "Secular One for the name and the figures; Heebo for play",
-      "Square slabs and 1px seams, without drop shadows",
-      "Hebrew, RTL, one phone column at most 480px",
-      "A resolved answer is a drawn mark and a color together"
+      "Night Ink shell, Match Paper sheet, Floodlight Lime signal",
+      "Karantina for the name and the figures; Rubik for play",
+      "One soft shadow, on the question sheet only",
+      "Hebrew, RTL, one phone column"
     ],
     "rules": [
-      {
-        "name": "The Amber Signal Rule",
-        "body": "Broadcast Amber marks what is live: the selected era, the lower-third, the corner score, the final score band, the points toast, and text selection. The continue button, the new-record line, resting rows, unchosen answers, captions, and the progress fill stay cream or navy.",
-        "section": "colors"
-      },
-      {
-        "name": "The Result Pair Rule",
-        "body": "Pitch Green and Wrong Red appear only after an answer resolves, on that slab and on the feedback bar. They are never decoration, and they never appear on the shell.",
-        "section": "colors"
-      },
-      {
-        "name": "The Two Faces Rule",
-        "body": "Secular One is the broadcast face: the name, the end title, the final score, the corner bug, the clock, the streak count, personal bests, the end-of-round stats, the new-record line, and the points toast. Heebo sets every question, choice, mode row, button, caption, and feedback line.",
-        "section": "typography"
-      },
-      {
-        "name": "The Tabular Figure Rule",
-        "body": "Scores, the clock, the question count, career years, and personal bests use tabular figures, so a changing numeral holds its width. The corner bug also clips the numeral (`overflow: hidden`) so the step reads as a rolling digit.",
-        "section": "typography"
-      },
-      {
-        "name": "The Phone Column Rule",
-        "body": "The interface is one RTL column, at most 480px, full viewport height. On the play screen the score and the answers stay pinned, and the question plate is the only scroller.",
-        "section": "layout"
-      },
-      {
-        "name": "The Flat Seam Rule",
-        "body": "Depth is the stack of navy, cream, and amber. A seam is a 1px line or a 1px inset ring. A drop shadow is out of the system. The focus ring is focus, not elevation.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Square Slab Rule",
-        "body": "Radius stays 0. A control is a slab, a divider is a 1px seam, and a thick colored edge is not a substitute for either.",
-        "section": "shapes"
-      },
-      {
-        "name": "The Mark As Well As Color Rule",
-        "body": "A correct answer draws a check and a wrong answer draws a cross, 16px, in the slab's own type color, beside the green or red fill. Feedback text repeats the result in a full-width slab of the same color. Color is never the only signal.",
-        "section": "components"
-      }
+      { "name": "The Lime Signal Rule", "body": "Lime marks what is live or what moves the round forward. It does not fill the question sheet, an unchosen answer, or a caption.", "section": "colors" },
+      { "name": "The Two Faces Rule", "body": "Karantina never sets a question or an answer. Rubik never sets the home name or the final score.", "section": "typography" },
+      { "name": "The One Shadow Rule", "body": "Only the question sheet casts a shadow, and that shadow has a downward offset.", "section": "elevation" }
     ],
     "dos": [
-      "**Do** set Hebrew RTL (`lang=\"he\"`, `dir=\"rtl\"`) and paint the shell Night Navy (`#071428`), including the browser `theme-color`.",
-      "**Do** self-host Secular One and variable Heebo from `app/fonts`. Secular One is the name and the scoreboard figures. Heebo is every question, choice, row, and caption.",
-      "**Do** keep every slab square and meet edges with a 1px seam: `rgba(244, 240, 230, 0.22)` on the shell, `rgba(16, 32, 51, 0.14)` on the cream field.",
-      "**Do** give Broadcast Amber to the selected era, the lower-third, the score bug, the final score band, the points toast, and text selection. The continue button and שיא חדש stay Programme Cream.",
-      "**Do** resolve an answer as Pitch Green or Wrong Red plus a drawn 16px check or cross.",
-      "**Do** keep targets at least 44px tall: the icon button and the score bug at 44px, era chips at 48px, answers and text buttons at 52px.",
-      "**Do** draw focus as a 2px cream outline, offset 3px, with `box-shadow: 0 0 0 5px` Night Navy.",
-      "**Do** honor `prefers-reduced-motion: reduce` by turning off the lower-third wipe, the score step, the toast travel, confetti, and the progress width transition."
+      "Self-host Karantina and variable Rubik.",
+      "Resolve an answer with color and a drawn mark."
     ],
     "donts": [
-      "**Don't** render emoji or the data `emoji` field. Draw icons as inline SVG with a 1.75 stroke and round caps.",
-      "**Don't** add a drop shadow, a gradient, a rounded pill, or a television bezel around the column.",
-      "**Don't** place a label above the name. The masthead is the name, and the tagline sits under it.",
-      "**Don't** use amber on a resting mode row, an unchosen answer, a caption, or the progress fill. The progress fill is Programme Cream.",
-      "**Don't** load Inter, a system display face, or a remote font. Arial Hebrew and Arial are fallbacks behind Heebo only.",
-      "**Don't** state correct or wrong by color alone.",
-      "**Don't** nest a second card inside the question plate. One amber lower-third sits on one cream field."
+      "Don't render emoji.",
+      "Don't bring back the amber lower-third or a television frame."
     ]
   }
 }
