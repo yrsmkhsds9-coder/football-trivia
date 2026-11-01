@@ -2,70 +2,70 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>כדורגל טריוויה</title>
-<meta name="theme-color" content="#0b3d2e">
+<meta name="theme-color" content="#071428">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="טריוויה ⚽">
+<meta name="apple-mobile-web-app-title" content="טריוויה">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-192.png">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="fonts/secular-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/heebo-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div id="app">
-  <!-- HOME -->
   <section id="home" class="screen active">
-    <div class="hero">
-      <div class="ball">⚽</div>
-      <h1>כדורגל<br><span>טריוויה</span></h1>
+    <header class="mast">
+      <h1>כדורגל<br>טריוויה</h1>
       <p class="tag">ליגת העל, נבחרות ואירופה של פעם</p>
-    </div>
+    </header>
     <div class="era-toggle" role="group" aria-label="תקופה">
-      <button class="chip active" data-era="all">כל התקופות</button>
-      <button class="chip" data-era="90s-00s">ניינטיז ו־2000 🔥</button>
+      <button class="chip active" type="button" data-era="all" aria-pressed="true">כל התקופות</button>
+      <button class="chip" type="button" data-era="90s-00s" aria-pressed="false">ניינטיז ו־2000</button>
     </div>
     <div id="modes" class="modes"></div>
     <p class="footer-note">10 שאלות בסבב · שיא אישי נשמר במכשיר</p>
   </section>
 
-  <!-- GAME -->
   <section id="game" class="screen">
     <header class="topbar">
-      <button id="quit" class="icon-btn" aria-label="יציאה">✕</button>
-      <div class="progress"><div id="progressFill"></div></div>
-      <div class="score-pill"><span id="score">0</span> נק׳</div>
+      <button id="quit" class="icon-btn" type="button" aria-label="יציאה">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" aria-label="התקדמות בסבב"><div id="progressFill"></div></div>
+      <div class="score-pill"><span class="bug"><span id="score">0</span></span><span class="unit">נק׳</span></div>
     </header>
     <div class="status-row">
-      <span id="qnum">1/10</span>
-      <span id="streak" class="streak hidden">🔥 <b>0</b></span>
+      <span class="qgroup"><span id="qnum">1/10</span><span id="streak" class="streak hidden">רצף <b>0</b></span></span>
       <span id="timer" class="timer">15</span>
     </div>
-    <div id="card" class="card"></div>
+    <div class="play-scroll">
+      <div id="card" class="card"></div>
+    </div>
     <div id="answers" class="answers"></div>
     <div id="actions" class="actions"></div>
   </section>
 
-  <!-- END -->
   <section id="end" class="screen">
     <div class="end-box">
-      <div id="endEmoji" class="end-emoji">🏆</div>
-      <h2 id="endTitle">סיום!</h2>
+      <h2 id="endTitle">סיום</h2>
       <div class="big-score"><span id="endScore">0</span><small>נקודות</small></div>
       <div class="stats">
         <div><b id="endCorrect">0</b><small>תשובות נכונות</small></div>
         <div><b id="endStreak">0</b><small>רצף שיא</small></div>
         <div><b id="endBest">0</b><small>שיא אישי</small></div>
       </div>
-      <div id="newRecord" class="new-record hidden">🎉 שיא חדש!</div>
-      <button id="again" class="btn primary">שחק שוב</button>
-      <button id="homeBtn" class="btn ghost">למסך הראשי</button>
+      <div id="newRecord" class="new-record hidden">שיא חדש</div>
+      <button id="again" class="btn primary" type="button">שחק שוב</button>
+      <button id="homeBtn" class="btn ghost" type="button">למסך הראשי</button>
     </div>
   </section>
 </div>
-<div id="toast" class="toast"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 <script src="data.js"></script>
 <script src="app.js"></script>
 </body>

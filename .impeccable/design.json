@@ -235,7 +235,7 @@
       },
       {
         "name": "wipe",
-        "value": "clip-path inset(0 100% 0 0) to inset(0 0 0 0), 0.42s",
+        "value": "clip-path inset(0 0 0 100%) to inset(0 0 0 0), 0.42s",
         "purpose": "A new question's lower-third uncovers from the left edge toward the right."
       },
       {
@@ -282,7 +282,7 @@
       "refersTo": "button-primary",
       "description": "Amber continue slab. Held state is #e0ad08. No hover fill.",
       "html": "<button class=\"ds-btn-primary\" type=\"button\">שחק שוב</button>",
-      "css": ".ds-btn-primary {\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  padding: 12px 14px;\n  min-height: 52px;\n  border: 0;\n  border-radius: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  line-height: 1.25;\n  direction: rtl;\n}\n.ds-btn-primary:active { background: #e0ad08; }\n.ds-btn-primary:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
+      "css": ".ds-btn-primary {\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  padding: 12px 14px;\n  min-height: 52px;\n  border: 0;\n  border-radius: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.05rem;\n  font-weight: 800;\n  line-height: 1.25;\n  direction: rtl;\n}\n.ds-btn-primary:active { background: var(--cream-2, #e7e0d2); }\n.ds-btn-primary:focus-visible {\n  outline: 2px solid var(--cream, #f4f0e6);\n  outline-offset: 3px;\n  box-shadow: 0 0 0 5px var(--navy, #071428);\n}"
     },
     {
       "name": "Secondary Button",
@@ -336,9 +336,9 @@
       "name": "Lower Third",
       "kind": "custom",
       "refersTo": "lower-third",
-      "description": "The question plate: one amber bar on one cream field. The bar uncovers from the left edge toward the right.",
+      "description": "The question plate: one amber bar on one cream field. The bar uncovers from the right edge toward the left.",
       "html": "<div class=\"ds-plate\"><div class=\"ds-lower\"><div class=\"ds-lower-row\"><h2 class=\"ds-question\">מי השחקן?</h2><p class=\"ds-worth\">שווה <b>100</b> נק׳</p></div></div><div class=\"ds-meta\"><span>ישראלי</span><span>ניינטיז/2000</span></div><ul class=\"ds-clubs\"><li class=\"ds-club\"><span class=\"ds-n\">1</span><span>קבוצה</span><span class=\"ds-yr\">1998–2003</span></li><li class=\"ds-club ds-club-locked\"><span class=\"ds-n\">2</span><span>???</span><span class=\"ds-yr\">????</span></li></ul></div>",
-      "css": ".ds-plate {\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  border-radius: 0;\n  direction: rtl;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n}\n.ds-lower {\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  padding: 14px 16px 13px;\n  animation: ds-wipe 0.42s cubic-bezier(0.16, 1, 0.3, 1);\n}\n@keyframes ds-wipe {\n  from { clip-path: inset(0 100% 0 0); }\n  to { clip-path: inset(0 0 0 0); }\n}\n.ds-lower-row {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  gap: 12px;\n}\n.ds-question {\n  margin: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.28rem;\n  font-weight: 800;\n  line-height: 1.35;\n}\n.ds-worth { margin: 0; font-size: 0.92rem; font-weight: 700; white-space: nowrap; }\n.ds-worth b { font-variant-numeric: tabular-nums; }\n.ds-meta {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 14px;\n  padding: 10px 16px 0;\n  color: var(--muted-ink, #3e4c5e);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n.ds-clubs {\n  list-style: none;\n  margin: 0;\n  padding: 4px 16px 8px;\n}\n.ds-club {\n  display: grid;\n  grid-template-columns: 1.5rem minmax(0, 1fr) auto;\n  gap: 10px;\n  align-items: baseline;\n  padding: 8px 0;\n  border-bottom: 1px solid var(--line-ink, rgba(16, 32, 51, 0.14));\n  font-size: 1.02rem;\n  font-weight: 700;\n}\n.ds-club:last-child { border-bottom: 0; }\n.ds-n { font-variant-numeric: tabular-nums; font-weight: 800; }\n.ds-yr {\n  font-variant-numeric: tabular-nums;\n  font-weight: 600;\n  font-size: 0.86rem;\n  color: var(--muted-ink, #3e4c5e);\n  direction: ltr;\n  unicode-bidi: isolate;\n}\n.ds-club-locked span:nth-child(2),\n.ds-club-locked .ds-yr { color: #4a433c; }"
+      "css": ".ds-plate {\n  background: var(--cream, #f4f0e6);\n  color: var(--ink, #102033);\n  border-radius: 0;\n  direction: rtl;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n}\n.ds-lower {\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  padding: 14px 16px 13px;\n  animation: ds-wipe 0.42s cubic-bezier(0.16, 1, 0.3, 1);\n}\n@keyframes ds-wipe {\n  from { clip-path: inset(0 0 0 100%); }\n  to { clip-path: inset(0 0 0 0); }\n}\n.ds-lower-row {\n  display: flex;\n  align-items: baseline;\n  justify-content: space-between;\n  gap: 12px;\n}\n.ds-question {\n  margin: 0;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 1.28rem;\n  font-weight: 800;\n  line-height: 1.35;\n}\n.ds-worth { margin: 0; font-size: 0.92rem; font-weight: 700; white-space: nowrap; }\n.ds-worth b { font-variant-numeric: tabular-nums; }\n.ds-meta {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 8px 14px;\n  padding: 10px 16px 0;\n  color: var(--muted-ink, #3e4c5e);\n  font-size: 0.82rem;\n  font-weight: 700;\n}\n.ds-clubs {\n  list-style: none;\n  margin: 0;\n  padding: 4px 16px 8px;\n}\n.ds-club {\n  display: grid;\n  grid-template-columns: 1.5rem minmax(0, 1fr) auto;\n  gap: 10px;\n  align-items: baseline;\n  padding: 8px 0;\n  border-bottom: 1px solid var(--line-ink, rgba(16, 32, 51, 0.14));\n  font-size: 1.02rem;\n  font-weight: 700;\n}\n.ds-club:last-child { border-bottom: 0; }\n.ds-n { font-variant-numeric: tabular-nums; font-weight: 800; }\n.ds-yr {\n  font-variant-numeric: tabular-nums;\n  font-weight: 600;\n  font-size: 0.86rem;\n  color: var(--muted-ink, #3e4c5e);\n  direction: ltr;\n  unicode-bidi: isolate;\n}\n.ds-club-locked span:nth-child(2),\n.ds-club-locked .ds-yr { color: #4a433c; }"
     },
     {
       "name": "Feedback",
@@ -352,14 +352,14 @@
       "name": "Result Band",
       "kind": "custom",
       "refersTo": "result-band",
-      "description": "End-of-round score. The amber band bleeds to the column edges. A new record is Secular One in amber under the stats.",
+      "description": "End-of-round score. The amber band bleeds to the column edges. A new record is Secular One in cream under the stats.",
       "html": "<div class=\"ds-end\"><div class=\"ds-result\"><span>840</span><small>נקודות</small></div><div class=\"ds-record\">שיא חדש</div></div>",
-      "css": ".ds-end { direction: rtl; text-align: center; }\n.ds-result {\n  margin: 0 -18px;\n  padding: 16px 18px 14px;\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  border-radius: 0;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: clamp(4.6rem, 24vw, 6rem);\n  line-height: 0.9;\n  font-variant-numeric: tabular-nums;\n}\n.ds-result small {\n  display: block;\n  margin-top: 6px;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 0.95rem;\n  font-weight: 800;\n  line-height: 1.2;\n}\n.ds-record {\n  margin-top: 8px;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: 1.85rem;\n  color: var(--amber, #f5c518);\n}"
+      "css": ".ds-end { direction: rtl; text-align: center; }\n.ds-result {\n  margin: 0 -18px;\n  padding: 16px 18px 14px;\n  background: var(--amber, #f5c518);\n  color: var(--navy, #071428);\n  border-radius: 0;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: clamp(4.6rem, 24vw, 6rem);\n  line-height: 0.9;\n  font-variant-numeric: tabular-nums;\n}\n.ds-result small {\n  display: block;\n  margin-top: 6px;\n  font-family: var(--font, \"Heebo\", \"Arial Hebrew\", Arial, sans-serif);\n  font-size: 0.95rem;\n  font-weight: 800;\n  line-height: 1.2;\n}\n.ds-record {\n  margin-top: 8px;\n  font-family: var(--display, \"Secular One\", \"Heebo\", sans-serif);\n  font-weight: 400;\n  font-size: 1.85rem;\n  color: var(--cream, #f4f0e6);\n}"
     }
   ],
   "narrative": {
     "northStar": "The Sunday Broadcast",
-    "overview": "כדורגל טריוויה is a ten-question Hebrew football quiz drawn as a 1990s Israeli sports broadcast on a single phone. Night Navy is the studio shell. Programme Cream is the card. Broadcast Amber is the live signal: the selected era, the question lower-third, the corner score, and the final score band, and also the primary continue button, the points toast, the new-record line, and text selection.\n\nThe column is square, dense, and flat. Secular One carries the name and the scoreboard figures. Heebo carries every question, choice, and caption. Regions meet at a 1px seam. A resolved answer is a Pitch Green or Wrong Red slab with a drawn mark. The question plate has one job, and a long career scrolls inside it. Quit is an unmarked icon button, held apart from the amber score.\n\nThe world keeps the broadcast and drops the costume. There is no emoji, no television bezel, no sticker-album chrome, and no toto-coupon grid. Depth comes from the three stacked fields, not from shadows.",
+    "overview": "כדורגל טריוויה is a ten-question Hebrew football quiz drawn as a 1990s Israeli sports broadcast on a single phone. Night Navy is the studio shell. Programme Cream is the card and the primary continue button. Broadcast Amber is the live signal: the selected era, the question lower-third, the corner score, the final score band, the points toast, and text selection.\n\nThe column is square, dense, and flat. Secular One carries the name and the scoreboard figures. Heebo carries every question, choice, and caption. Regions meet at a 1px seam. A resolved answer is a Pitch Green or Wrong Red slab with a drawn mark. The question plate has one job, and a long career scrolls inside it. Quit is an unmarked icon button, held apart from the amber score.\n\nThe world keeps the broadcast and drops the costume. There is no emoji, no television bezel, no sticker-album chrome, and no toto-coupon grid. Depth comes from the three stacked fields, not from shadows.",
     "keyCharacteristics": [
       "Night Navy shell, Programme Cream field, Broadcast Amber signal",
       "Secular One for the name and the figures; Heebo for play",
@@ -370,7 +370,7 @@
     "rules": [
       {
         "name": "The Amber Signal Rule",
-        "body": "Broadcast Amber marks what is live: the selected era, the lower-third, the corner score, the final score band, the primary continue button, the points toast, the new-record line, and text selection. Resting rows, unchosen answers, captions, and the progress fill stay cream or navy.",
+        "body": "Broadcast Amber marks what is live: the selected era, the lower-third, the corner score, the final score band, the points toast, and text selection. The continue button, the new-record line, resting rows, unchosen answers, captions, and the progress fill stay cream or navy.",
         "section": "colors"
       },
       {
@@ -413,7 +413,7 @@
       "**Do** set Hebrew RTL (`lang=\"he\"`, `dir=\"rtl\"`) and paint the shell Night Navy (`#071428`), including the browser `theme-color`.",
       "**Do** self-host Secular One and variable Heebo from `app/fonts`. Secular One is the name and the scoreboard figures. Heebo is every question, choice, row, and caption.",
       "**Do** keep every slab square and meet edges with a 1px seam: `rgba(244, 240, 230, 0.22)` on the shell, `rgba(16, 32, 51, 0.14)` on the cream field.",
-      "**Do** give Broadcast Amber to the selected era, the lower-third, the score bug, the final score band, the primary continue button, the points toast, the new-record line, and text selection.",
+      "**Do** give Broadcast Amber to the selected era, the lower-third, the score bug, the final score band, the points toast, and text selection. The continue button and שיא חדש stay Programme Cream.",
       "**Do** resolve an answer as Pitch Green or Wrong Red plus a drawn 16px check or cross.",
       "**Do** keep targets at least 44px tall: the icon button and the score bug at 44px, era chips at 48px, answers and text buttons at 52px.",
       "**Do** draw focus as a 2px cream outline, offset 3px, with `box-shadow: 0 0 0 5px` Night Navy.",

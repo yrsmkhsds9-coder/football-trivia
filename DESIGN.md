@@ -55,14 +55,14 @@ spacing:
   pad: "18px"
 components:
   button-primary:
-    backgroundColor: "{colors.amber}"
-    textColor: "{colors.navy}"
+    backgroundColor: "{colors.cream}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.none}"
     padding: "12px 14px"
     height: "52px"
   button-primary-active:
-    backgroundColor: "#e0ad08"
-    textColor: "{colors.navy}"
+    backgroundColor: "{colors.cream-2}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.none}"
     padding: "12px 14px"
     height: "52px"
@@ -174,7 +174,7 @@ components:
 
 **Creative North Star: "The Sunday Broadcast"**
 
-כדורגל טריוויה is a ten-question Hebrew football quiz drawn as a 1990s Israeli sports broadcast on a single phone. Night Navy is the studio shell. Programme Cream is the card. Broadcast Amber is the live signal: the selected era, the question lower-third, the corner score, and the final score band, and also the primary continue button, the points toast, the new-record line, and text selection.
+כדורגל טריוויה is a ten-question Hebrew football quiz drawn as a 1990s Israeli sports broadcast on a single phone. Night Navy is the studio shell. Programme Cream is the card and the primary continue button. Broadcast Amber is the live signal: the selected era, the question lower-third, the corner score, the final score band, the points toast, and text selection.
 
 The column is square, dense, and flat. Secular One carries the name and the scoreboard figures. Heebo carries every question, choice, and caption. Regions meet at a 1px seam. A resolved answer is a Pitch Green or Wrong Red slab with a drawn mark. The question plate has one job, and a long career scrolls inside it. Quit is an unmarked icon button, held apart from the amber score.
 
@@ -194,9 +194,9 @@ A night broadcast: one amber signal, a cream reading field, and two result color
 
 ### Primary
 
-- **Broadcast Amber** (`#f5c518`): the live signal. It fills the selected era half, the question lower-third, the corner score bug, the final score band, and the primary continue button. It colors the points toast, the new-record line, and text selection (amber field, navy type). Confetti, on a streak of 3 or 5 and on a new record, uses this amber as one of four palette scraps, with Programme Cream, Pitch Green, and Standby Gray.
+- **Broadcast Amber** (`#f5c518`): the live signal. It fills the selected era half, the question lower-third, the corner score bug, and the final score band. It colors the points toast and text selection (amber field, navy type). Confetti, on a streak of 3 or 5 and on a new record, uses this amber as one of four palette scraps, with Programme Cream, Pitch Green, and Standby Gray.
 
-The direction contract named three amber sites: the selected era, the lower-third, and the score. The shipped interface also paints the primary button, the points toast, the new-record line, and selection. Those belong to the signal.
+The primary continue button and the new-record line stay Programme Cream, so the end screen does not grow a second amber voice under the score band.
 
 ### Secondary
 
@@ -220,7 +220,7 @@ The direction contract named three amber sites: the selected era, the lower-thir
 
 ### Named Rules
 
-**The Amber Signal Rule.** Broadcast Amber marks what is live: the selected era, the lower-third, the corner score, the final score band, the primary continue button, the points toast, the new-record line, and text selection. Resting rows, unchosen answers, captions, and the progress fill stay cream or navy.
+**The Amber Signal Rule.** Broadcast Amber marks what is live: the selected era, the lower-third, the corner score, the final score band, the points toast, and text selection. The continue button, the new-record line, resting rows, unchosen answers, captions, and the progress fill stay cream or navy.
 
 **The Result Pair Rule.** Pitch Green and Wrong Red appear only after an answer resolves, on that slab and on the feedback bar. They are never decoration, and they never appear on the shell.
 
@@ -299,7 +299,7 @@ Shared focus: `:focus` clears the outline. `:focus-visible` draws a 2px Programm
 
 Square slabs, at least 52px tall, Heebo 800 at 1.05rem, padding 12px 14px. They share a row with 8px between them and grow to fill it (`flex: 1`). On the end screen each button is its own full-width row.
 
-- **Primary:** Broadcast Amber field, Night Navy type. The continue action after an answer, and שחק שוב on the result. Held state (`:active`) is `#e0ad08`. There is no hover fill.
+- **Primary:** Programme Cream field, Scoreboard Ink type. The continue action after an answer, and שחק שוב on the result. Held state (`:active`) is Pressed Cream. There is no hover fill.
 - **Secondary:** transparent, Programme Cream type, 1px shell-seam inset. The in-round pair, עוד קבוצה and הצג הכל. Held state is the cream wash. Disabled type is `#b7c2d1` with a fainter inset, `rgba(244, 240, 230, 0.18)`.
 - **Ghost:** the same hairline as secondary. Used full width for למסך הראשי, 10px under the primary. Held state is the same cream wash.
 
@@ -313,7 +313,7 @@ The question plate is one cream field (`color-scheme: light`) with one amber low
 
 Under the bar, meta (league, era, ישראלי or אירופה) is Caption Ink, 0.82rem, weight 700, padding 10px 16px 0, with 8px between items and 14px between wrapped rows. Career rows are a hairline list: a tabular index, the club, and an LTR year. A loan note is Caption Ink at weight 600. A hidden club is `#4a433c` for the name and the year. The last row has no rule.
 
-Each new question's lower-third uncovers from the left edge toward the right, because `clip-path: inset()` uses physical edges: from `inset(0 100% 0 0)` to `inset(0 0 0 0)`, 0.42s, `cubic-bezier(0.16, 1, 0.3, 1)`.
+Each new question's lower-third uncovers from the right edge toward the left, the reading start in RTL: from `inset(0 0 0 100%)` to `inset(0 0 0 0)`, 0.42s, `cubic-bezier(0.16, 1, 0.3, 1)`.
 
 ### Navigation
 
@@ -331,7 +331,7 @@ Held (`:active`) is Pressed Cream. Hover, only under `(hover: hover)`, is `#fffd
 
 ### Result, toast, confetti
 
-The final score is the amber band at full column width, Secular One tabular at `clamp(4.6rem, 24vw, 6rem)`, with נקודות in Heebo 800 at 0.95rem under the figure. Three stats follow: Secular One tabular at 1.7rem, Programme Cream, caption under each in Standby Gray at 0.75rem, weight 700. A new record adds שיא חדש in Secular One at 1.85rem, Broadcast Amber, 8px under the stats.
+The final score is the amber band at full column width, Secular One tabular at `clamp(4.6rem, 24vw, 6rem)`, with נקודות in Heebo 800 at 0.95rem under the figure. Three stats follow: Secular One tabular at 1.7rem, Programme Cream, caption under each in Standby Gray at 0.75rem, weight 700. A new record adds שיא חדש in Secular One at 1.85rem, Programme Cream, 8px under the stats.
 
 The points toast is a fixed amber slab, Secular One at 1.25rem, Night Navy, padding 8px 12px, centered 66px below the safe area. It fades and travels 6px (opacity 0.2s linear, transform 0.28s on the broadcast curve) and clears after 1.1s.
 
@@ -348,7 +348,7 @@ Confetti is 22 rectangles, 8×12, in Broadcast Amber, Programme Cream, Pitch Gre
 - **Do** set Hebrew RTL (`lang="he"`, `dir="rtl"`) and paint the shell Night Navy (`#071428`), including the browser `theme-color`.
 - **Do** self-host Secular One and variable Heebo from `app/fonts`. Secular One is the name and the scoreboard figures. Heebo is every question, choice, row, and caption.
 - **Do** keep every slab square and meet edges with a 1px seam: `rgba(244, 240, 230, 0.22)` on the shell, `rgba(16, 32, 51, 0.14)` on the cream field.
-- **Do** give Broadcast Amber to the selected era, the lower-third, the score bug, the final score band, the primary continue button, the points toast, the new-record line, and text selection.
+- **Do** give Broadcast Amber to the selected era, the lower-third, the score bug, the final score band, the points toast, and text selection. The continue button and שיא חדש stay Programme Cream.
 - **Do** resolve an answer as Pitch Green or Wrong Red plus a drawn 16px check or cross.
 - **Do** keep targets at least 44px tall: the icon button and the score bug at 44px, era chips at 48px, answers and text buttons at 52px.
 - **Do** draw focus as a 2px cream outline, offset 3px, with `box-shadow: 0 0 0 5px` Night Navy.

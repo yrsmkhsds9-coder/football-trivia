@@ -9,26 +9,40 @@
   let era = localStorage.getItem("ft_era") || "all";
   let S = null, timerId = null;
 
-  function show(id) { document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === id)); window.scrollTo(0, 0); }
+  function show(id) {
+    document.querySelectorAll(".confetti").forEach(c => c.remove());
+    document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s.id === id));
+    window.scrollTo(0, 0);
+  }
   function toast(t) { const el = $("#toast"); el.textContent = t; el.classList.add("show"); clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove("show"), 1100); }
   function vibrate(p) { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} }
   function confetti() {
-    const colors = ["#ffd23f", "#ff6b35", "#2ecc71", "#4dabf7", "#fff"];
-    for (let i = 0; i < 40; i++) {
+    const colors = ["#f5c518", "#f4f0e6", "#0c5c34", "#d5dce8"];
+    for (let i = 0; i < 22; i++) {
       const c = document.createElement("div"); c.className = "confetti";
       c.style.left = Math.random() * 100 + "vw"; c.style.background = colors[i % colors.length];
-      c.style.animationDuration = 1.5 + Math.random() * 1.5 + "s"; c.style.animationDelay = Math.random() * .4 + "s";
+      c.style.animationDuration = 1.05 + Math.random() * 0.55 + "s"; c.style.animationDelay = Math.random() * .15 + "s";
       document.body.appendChild(c); setTimeout(() => c.remove(), 3500);
     }
   }
 
   // ---------- HOME ----------
+  const ICONS = {
+    career: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17.5V8.2"/><path d="M4 17.5h16"/><path d="M4 8.2c2.4 2.2 3.6 3 5.4 3 2.5 0 3.1-2.7 5.4-2.7 1.7 0 2.9.7 5.2 2.2"/><circle cx="4" cy="8.2" r="1.25"/><circle cx="9.4" cy="11.2" r="1.25"/><circle cx="14.8" cy="8.5" r="1.25"/><circle cx="20" cy="10.7" r="1.25"/></svg>',
+    trivia: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h10M7 12h10M7 17h6"/></svg>',
+    crest: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 19 6.2v5.4c0 4.2-2.8 6.7-7 8.9-4.2-2.2-7-4.7-7-8.9V6.2L12 3.5z"/></svg>'
+  };
+
   function renderHome() {
-    document.querySelectorAll(".chip").forEach(c => c.classList.toggle("active", c.dataset.era === era));
+    document.querySelectorAll(".chip").forEach(c => {
+      const on = c.dataset.era === era;
+      c.classList.toggle("active", on);
+      c.setAttribute("aria-pressed", on ? "true" : "false");
+    });
     $("#modes").innerHTML = D.MODES.map(m => `
-      <button class="mode" data-mode="${m.id}" ${m.enabled ? "" : "disabled"}>
-        <span class="em">${m.emoji}</span>
-        <span><div class="t">${m.title}</div><div class="s">${m.subtitle}</div></span>
+      <button class="mode" type="button" data-mode="${m.id}" ${m.enabled ? "" : "disabled"}>
+        <span class="em" aria-hidden="true">${ICONS[m.id] || ""}</span>
+        <span class="copy"><span class="t">${m.title}</span><span class="s">${m.subtitle}</span></span>
         ${m.enabled ? `<span class="best"><b>${LS.get("best_" + m.id)}</b>שיא</span>` : ""}
       </button>`).join("");
     document.querySelectorAll(".mode:not([disabled])").forEach(b => b.onclick = () => start(b.dataset.mode));
@@ -71,6 +85,11 @@
     S.locked = false; S.revealed = 1;
     $("#qnum").textContent = `${S.i + 1}/${S.items.length}`;
     $("#progressFill").style.width = (S.i / S.items.length * 100) + "%";
+    const bar = document.querySelector(".progress");
+    if (bar) {
+      bar.setAttribute("aria-valuenow", String(S.i));
+      bar.setAttribute("aria-valuemax", String(S.items.length));
+    }
     updateStreak();
     $("#answers").classList.toggle("grid2", it.type === "career");
     $("#answers").innerHTML = it.options.map((o, k) => `<button class="ans" data-k="${k}">${o}</button>`).join("");
@@ -84,27 +103,27 @@
   function renderCard() {
     const it = S.items[S.i];
     if (it.type === "trivia") {
-      $("#card").innerHTML = `<div class="label"><span class="badge">${D.LEAGUES[it.q.league]}</span><span class="badge">${ERA_LABEL[it.q.era]}</span></div>
-        <div class="question">${it.q.q}</div>`;
+      $("#card").innerHTML = `<div class="lower"><h2 class="question">${it.q.q}</h2></div>
+        <div class="meta"><span>${D.LEAGUES[it.q.league]}</span><span>${ERA_LABEL[it.q.era]}</span></div>`;
       return;
     }
     const c = it.player.career;
     const rows = c.map((r, k) => k < S.revealed || S.locked
-      ? `<li class="club"><span class="n">${k + 1}</span><span>${r[0]}${r[2] ? ' <span class="loan">(השאלה)</span>' : ""}</span><span class="yr">${r[1]}</span></li>`
-      : `<li class="club locked"><span class="n">${k + 1}</span><span>???</span><span class="yr">????</span></li>`).join("");
-    $("#card").innerHTML = `<div class="label"><span>מי השחקן? ${S.locked ? "" : `· שווה <b>${careerPoints()}</b> נק׳`}</span>
-      <span class="badge">${it.player.group === "il" ? "🇮🇱 ישראלי" : "🌍 אירופה"}</span></div><ul class="clubs ${c.length > 11 ? "compact xcompact" : c.length > 7 ? "compact" : ""}">${rows}</ul>`;
+      ? `<li class="club"><span class="n">${k + 1}</span><span class="who">${r[0]}${r[2] ? ' <span class="loan">(השאלה)</span>' : ""}</span><span class="yr">${r[1]}</span></li>`
+      : `<li class="club locked"><span class="n">${k + 1}</span><span class="who">???</span><span class="yr">????</span></li>`).join("");
+    $("#card").innerHTML = `<div class="lower"><div class="lower-row"><h2 class="question">מי השחקן?</h2>${S.locked ? "" : `<p class="worth">שווה <b>${careerPoints()}</b> נק׳</p>`}</div></div>
+      <div class="meta"><span>${it.player.group === "il" ? "ישראלי" : "אירופה"}</span></div><ul class="clubs ${c.length > 11 ? "compact xcompact" : c.length > 7 ? "compact" : ""}">${rows}</ul>`;
   }
 
   function renderActions() {
     const it = S.items[S.i];
     if (S.locked) {
-      $("#actions").innerHTML = `<button class="btn primary" id="nextBtn">${S.i + 1 >= S.items.length ? "לתוצאות 🏁" : "הבא ←"}</button>`;
+      $("#actions").innerHTML = `<button class="btn primary" type="button" id="nextBtn">${S.i + 1 >= S.items.length ? "לתוצאות" : "הבא"}</button>`;
       $("#nextBtn").onclick = () => { S.i++; next(); };
     } else if (it.type === "career") {
       const left = it.player.career.length - S.revealed;
-      $("#actions").innerHTML = `<button class="btn secondary" id="hintBtn" ${left ? "" : "disabled"}>➕ עוד קבוצה (${left})</button>
-        <button class="btn secondary" id="allBtn" ${left ? "" : "disabled"}>הצג הכל</button>`;
+      $("#actions").innerHTML = `<button class="btn secondary" type="button" id="hintBtn" ${left ? "" : "disabled"}>עוד קבוצה (${left})</button>
+        <button class="btn secondary" type="button" id="allBtn" ${left ? "" : "disabled"}>הצג הכל</button>`;
       $("#hintBtn").onclick = () => { S.revealed++; renderCard(); renderActions(); };
       $("#allBtn").onclick = () => { S.revealed = it.player.career.length; renderCard(); renderActions(); };
     } else $("#actions").innerHTML = "";
@@ -127,15 +146,16 @@
       S.score += gained;
       $("#score").textContent = S.score;
       const pill = $(".score-pill"); pill.classList.remove("pop"); void pill.offsetWidth; pill.classList.add("pop");
-      toast(`+${gained}${mult > 1 ? ` 🔥x${mult}` : ""}`); vibrate(30);
+      toast(`+${gained}${mult > 1 ? ` ×${mult}` : ""}`); vibrate(30);
       if (S.streak === 3 || S.streak === 5) confetti();
     } else { S.streak = 0; vibrate([60, 40, 60]); }
     updateStreak();
     renderCard(); renderActions();
     const fb = document.createElement("div");
     fb.className = "feedback " + (ok ? "good" : "bad");
-    fb.textContent = ok ? (it.type === "career" ? `נכון! ${it.player.name} ✅` : "נכון! ✅")
-      : (k === -1 ? "⏰ נגמר הזמן! " : "לא נכון. ") + `התשובה: ${it.options[it.answer]}`;
+    fb.setAttribute("role", "status");
+    fb.textContent = ok ? (it.type === "career" ? `נכון! ${it.player.name}` : "נכון!")
+      : (k === -1 ? "נגמר הזמן. " : "לא נכון. ") + `התשובה: ${it.options[it.answer]}`;
     $("#actions").before(fb);
     setTimeout(() => { const nb = $("#nextBtn"); if (nb) nb.scrollIntoView({ behavior: "smooth", block: "nearest" }); }, 250);
   }
@@ -158,6 +178,8 @@
   function finish() {
     stopTimer(); $("#toast").classList.remove("show");
     $("#progressFill").style.width = "100%";
+    const bar = document.querySelector(".progress");
+    if (bar) bar.setAttribute("aria-valuenow", String(S.items.length));
     const key = "best_" + S.mode, prev = LS.get(key), rec = S.score > prev;
     if (rec) LS.set(key, S.score);
     $("#endScore").textContent = S.score;
@@ -166,7 +188,6 @@
     $("#endBest").textContent = Math.max(prev, S.score);
     $("#newRecord").classList.toggle("hidden", !rec || S.score === 0);
     const r = S.correct / S.items.length;
-    $("#endEmoji").textContent = r >= .9 ? "🏆" : r >= .6 ? "⚽" : r >= .3 ? "😅" : "🙈";
     $("#endTitle").textContent = r >= .9 ? "אגדה!" : r >= .6 ? "יפה מאוד!" : r >= .3 ? "לא רע!" : "צריך עוד אימונים";
     show("end"); if (rec && S.score > 0) confetti();
   }
